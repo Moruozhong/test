@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>要开学了</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .rainbow-text {
+      font-size: 80px;
+      font-weight: bold;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #tip {
+      position: absolute;
+      font-size: 24px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      animation: fadeout 3s forwards;
+    }
+    
+    @keyframes fadeout {
+      from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+<body onmousedown="showTip(event)">
+  <h1 class="rainbow-text">要开学了</h1>
+  <script>
+    function showTip(event) {
+      var tips = [
+        '作业写完了吗？',
+        '读后感有好好写吗？',
+        '手抄报画了吗？',
+        '知道什么时候报道吗？',
+        '还记得上学期的内容吗？',
+        '体育作业做没做？',
+        '德智体美劳全面发展了嘛？',
+        '有信心得第一吗？',
+        '想把假期时间延长吗？',
+        '期待和同学见面吗？'
+      ];
+      var index = Math.floor(Math.random() * tips.length);
+      var tip = document.createElement('div');
+      tip.id = 'tip';
+      tip.textContent = tips[index];
+      tip.style.left = event.clientX + 'px';
+      tip.style.top = event.clientY + 'px';
+      document.body.appendChild(tip);
+    }
+  </script>
+</body>
+</html>
