@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>要开学了</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .rainbow-text {
+      font-size: 80px;
+      font-weight: bold;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #tip {
+      position: absolute;
+      font-size: 24px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      animation: fadeout 3s forwards;
+    }
+    
+    @keyframes fadeout {
+      from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+<body onmousedown="showTip(event)">
+  <h1 class="rainbow-text">要放假了</h1>
+  <script>
+    function showTip(event) {
+      var tips = [
+        '原神启动！！！',
+        '哦哦哦，哦哦哦，噢噢噢噢哦哦哦',
+        '返せ！返せ！ボクの家族を...',
+        '启动启动动启动动启动动启动动启动动启动动启动动启动动启动动启动动启动，还有，这个！',
+        '啊啊啊啊啊啊啊啊啊啊噢噢噢噢噢噢噢噢哦哦哦哦哦哦',
+        '噢噢噢噢噢噢噢噢哦哦哦噢噢噢噢噢噢噢噢哦哦哦',
+        '噢噢噢噢噢噢噢噢哦哦哦',
+        '噢噢噢噢哦哦哦',
+        '哦哦哦',
+        '噢噢噢噢噢噢噢噢哦哦噢噢噢噢噢噢噢噢哦哦哦哦哦哦哦哦哦哦哦哦'
+      ];
+      var index = Math.floor(Math.random() * tips.length);
+      var tip = document.createElement('div');
+      tip.id = 'tip';
+      tip.textContent = tips[index];
+      tip.style.left = event.clientX + 'px';
+      tip.style.top = event.clientY + 'px';
+      document.body.appendChild(tip);
+    }
+  </script>
+</body>
+</html>

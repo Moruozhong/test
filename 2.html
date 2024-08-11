@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Maker - Works</title>
+<style>
+    /*列表的css已经弄好了（因为本来想弄列表展示作品的可是太丑了（），可用可不用（（（屑*/
+    /*这背景真好看qwq*/
+
+    /*秘籍 · 史山代码！*/
+    .text {
+        color: black
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(to bottom right, #ff99cc, #ffcc99, #ffff99, #ccff99, #99ffcc, #9999ff); /* 彩虹渐变色背景 */
+        background-attachment: fixed; /* 固定背景图像 */
+        background-size: cover; /* 背景图像覆盖整个屏幕 */
+        transition: background-color 0.5s ease; /* 添加过渡效果 */
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: rgba(255, 255, 255, 0.9); /* 添加磨砂效果（吐槽一句这不就调了个透明度吗，还磨砂效果，爷可真高大上 */
+        border-radius: 20px; /* 圆角 */
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 阴影 */
+        transition: background-color 0.5s ease; /* 添加过渡效果 */
+    }
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    header h1 {
+        color: #333;
+    }
+    nav {
+        background-color: #f2f2f2;
+        padding: 10px;
+        border-radius: 10px; /* 圆角 */
+        margin-bottom: 20px;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+    nav ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    nav ul li a {
+        color: #333;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px; /* 圆角 */
+        transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover {
+        background-color: #ddd;
+    }
+    section {
+        padding: 20px;
+    }
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #ffffff;
+        color: #3333337c; /* 脚注文字颜色.. */
+        border-radius: 10px; /* 好看的圆角 */
+        margin-top: 20px;
+    }
+    /* 夜猫子模式样式 */
+    .night-mode body {
+        background-image: linear-gradient(to bottom right, #333333, #222222, #111111); /* 夜猫子模式背景色 */
+    }
+    .night-mode .container {
+        background-color: rgba(0, 0, 0, 0.9); /* 添加⭐高级⭐磨砂质感效果 */
+    }
+    .night-mode header h1 {
+        color: #fff;
+    }
+    .night-mode nav {
+        background-color: #555;
+    }
+    .night-mode nav ul li a {
+        color: #fff;
+    }
+    .night-mode section {
+        color: #fff;
+    }
+    .night-mode footer {
+        background-color: #5555557c;
+        color: #fff; /* 夜猫子模式下脚注文字颜色byd怎么css那么烦 */
+    }
+    .night-mode .project-name {
+        color:#fff
+    }
+    .night-mode .text {
+        color:#fff
+    }
+
+    /* 添加切换按钮样式，挺好 */
+    .toggle-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    /*我下面的project-list的css直接抄你之前的了（）希望没意见（（（*/
+
+    .project-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .project-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-name {
+            color: gray;
+        }
+
+        .download-link {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+.text-with-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    background-image: linear-gradient(to bottom right, #ff99cc, #ffcc99, #ffff99, #ccff99, #99ffcc, #9999ff);
+    border: none;
+    border-radius: 12px;
+    color: gray;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+        .rainbow-text {
+            font-size: 17px;
+            font-weight: bold;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    }
+
+</style>
+<!--上面一直在复制粘贴我以前写的css..所以格式很乱..-->
+</head>
+<body>
+
+<div class="container" id="container">
+    <header>
+        <h1><p class="text-with-shadow">111's</p></h1>
+    </header>
+    
+    <!--啊原来列表我这用了吗，我在写些什么-->
+    <!--哦原来如此这个列表不是。。。-->
+    <nav>
+        <ul>
+            <li><a href="#">主页</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">111</a></li>
+        </ul>
+    </nav>
+    
+    <!--你不喜欢文字在中间可以把 align="center"删了-->
+    <section>
+        <h2 align="center">关于我们</h2>
+        <p align="center">111</p>
+    </section>
+    
+
+    <section>
+        <h2 align="center">1111</h2>
+        <p align="center">1111</p>
+    </section>
+    </div>
+
+    <div class="container" id="container">
+
+        <!--下面加东西-->
+        <!--不是我搁这叠乐高呢-->
+        <h2 class="text">111</h2>
+        <h4 class="text">111</h4>
+        <ul class="project-list">
+            <li class="project-item">
+                <span class="project-name">
+                    <div class="tooltip" data-tooltip="text">
+                        <b class="rainbow-text">text</b>
+                    </div>
+                    <!--我写的什么史山代码。。这button怎么移不到右边去啊啊啊啊啊-->
+                        <a href="#" class="button">下载</a>
+                </span>
+            </li>
+        <h2 class="text">2</h2>
+        <p align="center" class="text">暂时还没有欧.. ;-(</p>
+    </section>
+    
+
+
+
+
+    <footer>
+        <p>&copy; copyright</p>
+    </footer>
+</div>
+
+<!-- 切换按钮 -->
+<div class="toggle-btn" id="toggleBtn">&#127770;</div>
+
+<script>
+    // 这个js是切换熬夜（？）模式用的（（（（
+    // 这是获取container元素和切换按钮
+    var container = document.getElementById("container");
+    var toggleBtn = document.getElementById("toggleBtn");
+
+    // 这是监听切换按钮的点击事件
+    toggleBtn.addEventListener("click", function() {
+        // 切换夜猫子模式，对说的就是你，夜猫子。
+        if (document.body.classList.contains("night-mode")) {
+            document.body.classList.remove("night-mode");
+        } else {
+            document.body.classList.add("night-mode");
+        }
+    });
+</script>
+
+</body>
+</html>

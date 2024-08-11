@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #F7F7F7; /* 背景色为浅灰色 */
+  color: black; /* 文字颜色为黑色 */
+  font-family: Arial, sans-serif; /* 字体为Arial或sans-serif */
+  transition: background-color 0.5s, color 0.5s; /* 添加背景色和文字颜色的过渡效果 */
+}
+
+.container {
+  max-width: 650px; /* 设置内容容器的最大宽度 */
+  margin: 0 auto; /* 居中对齐 */
+  padding: 20px; /* 内边距为20像素 */
+  background-color: #E8E8E8; /* 容器背景色为淡灰色 */
+  border-radius: 10px; /* 边角设置为圆角，半径为10px */
+  transition: background-color 0.5s; /* 添加背景色的过渡效果 */
+}
+
+/* 夜晚模式按钮样式 */
+#night-mode-btn {
+  position: fixed; /* 设置为固定定位，不随滚动条滚动 */
+  bottom: 20px; /* 距离底部20像素 */
+  right: 20px; /* 距离右侧20像素 */
+  width: 50px; /* 宽度为50像素 */
+  height: 50px; /* 高度为50像素 */
+  border-radius: 50%; /* 将按钮的边角设置为圆形 */
+  background-color: #333; /* 背景色为深灰色 */
+  color: white; /* 文字颜色为白色 */
+  font-size: 24px; /* 字体大小为24像素 */
+  text-align: center; /* 文字居中 */
+  line-height: 50px; /* 行高等于按钮高度，使文字垂直居中 */
+  cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
+/* 夜晚模式样式 */
+body.night-mode {
+  background-color: black; /* 将背景色修改为黑色 */
+  color: white; /* 文字颜色为白色 */
+}
+
+.container.night-mode {
+  background-color: #111; /* 将容器背景色修改为深灰色 */
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="container">
+  <h1 align="center">GRW Team Recruitment Notice</h1>
+  <p>Greetings, fellow gamers! The GRW Team is excited to announce that we are currently looking for talented individuals to join our team. If you consider yourself a parkour expert, survival guru, PvP boss, early riser, skilled builder, or redstone genius, we want you! We also welcome newcomers who are passionate about gaming and eager to learn.</p>
+  <p>At GRW Team, we value teamwork, creativity, and a positive gaming experience. As a member of our team, you'll have the opportunity to collaborate with like-minded individuals, participate in exciting projects, and contribute to the growth of our gaming community.</p>
+  <p>Requirements:</p>
+  <p>Skills: If you believe you have what it takes to excel in any of the following areas - parkour, survival, PvP, early rising, building, or redstone - we encourage you to apply.</p>
+  <p>Passion: We are seeking individuals who are genuinely passionate about gaming and are eager to improve their skills. Enthusiasm and dedication are key!</p>
+  <p>Team Player: Collaboration and teamwork are essential in our team. We value individuals who can work well with others, communicate effectively, and contribute positively to our community.</p>
+  <p>Availability: Please ensure that you have a reasonable amount of time to dedicate to team activities and projects.</p>
+  <p>How to Apply:</p>
+  <p>To apply for a position in the GRW Team, please follow these steps:</p>
+  <p>Fill out the application form at https://www.bilibili.com/video/BV1uT4y1P7CX/ with your personal information, gaming experience, and the area(s) you specialize in.</p>
+  <p>Provide any relevant evidence of your skills, such as gameplay videos, screenshots, or previous project contributions.</p>
+  <p>Submit your application before the deadline on 19/14/1145.</p>
+  <p>Please note that due to the high volume of applications we receive, only shortlisted candidates will be contacted for further selection rounds. We appreciate your understanding.</p>
+  <p>Join us today and become part of the GRW Team, where gaming dreams come to life! We look forward to welcoming talented individuals and newcomers alike.</p>
+  <p>Best regards,</p>
+  <p>GRW Team</p>
+  <!-- 夜晚模式按钮 -->
+  <button id="night-mode-btn">☾</button>
+</div>
+
+<script>
+// 夜晚模式按钮点击事件
+document.getElementById("night-mode-btn").addEventListener("click", function() {
+  document.body.classList.toggle("night-mode"); // 切换body元素的class
+  document.querySelector('.container').classList.toggle('night-mode'); // 切换.container元素的class
+});
+</script>
+
+</body>
+</html>

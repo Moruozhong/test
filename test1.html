@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT Demo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #chat-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+    #chat-messages {
+        margin-bottom: 20px;
+        overflow-y: auto;
+        max-height: 300px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    .user-message {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #d3f4ff;
+        border-radius: 5px;
+    }
+    .bot-message {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #e6e6e6;
+        border-radius: 5px;
+    }
+    #user-input {
+        width: calc(100% - 20px);
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    #send-button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div id="chat-container">
+    <div id="chat-messages"></div>
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button id="send-button">Send</button>
+</div>
+
+<script>
+    const chatMessages = document.getElementById('chat-messages');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+
+    sendButton.addEventListener('click', () => {
+        const userMessage = userInput.value.trim();
+        if (userMessage !== '') {
+            appendMessage('user', userMessage);
+            userInput.value = '';
+            sendUserMessage(userMessage);
+        }
+    });
+
+    function appendMessage(sender, message) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add(`${sender}-message`);
+        messageElement.textContent = message;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function sendUserMessage(message) {
+        // 在这里调用API发送用户消息，并处理ChatGPT的响应
+        // 请根据你的具体情况进行调整
+        // 这里只是一个示例
+        const botMessage = 'This is a dummy response from ChatGPT.';
+        appendMessage('bot', botMessage);
+    }
+</script>
+</body>
+</html>
